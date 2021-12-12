@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../models/category.dart';
 import '../util/api.dart';
 import '../util/enum/api_request_status.dart';
-import '../util/functions.dart';
 
 class HomeProvider with ChangeNotifier {
   CategoryFeed top = CategoryFeed();
@@ -20,14 +19,6 @@ class HomeProvider with ChangeNotifier {
       setRecent(newReleases);
       setApiRequestStatus(APIRequestStatus.loaded);
     } catch (e) {
-      checkError(e);
-    }
-  }
-
-  void checkError(e) {
-    if (Functions.checkConnectionError(e)) {
-      setApiRequestStatus(APIRequestStatus.connectionError);
-    } else {
       setApiRequestStatus(APIRequestStatus.error);
     }
   }

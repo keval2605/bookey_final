@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:provider/provider.dart';
 import '../components/body_builder.dart';
 import '../components/book_list_item.dart';
 import '../models/category.dart';
 import '../providers/genre_provider.dart';
-import 'package:provider/provider.dart';
 
 class Genre extends StatefulWidget {
   final String title;
